@@ -2,3 +2,9 @@
     - split text by commas and check with spacy for numbers and with network for items
 2. fix double list errors when adding food on anything else
 3. fix anything else loop
+
+
+
+- text classification gaussiannb parameters
+- text classification mutinomialnb with parameters 
+- make your own word embedings (CBow, skipgram)
