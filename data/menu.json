@@ -1,0 +1,56 @@
+[
+    {
+        "meal": "Margherita",
+        "ingredient": "Fresh tomatoes, fresh mozzarella, fresh basil",
+        "price": "$12.50",
+        "class": "pizza"
+    },
+    {
+        "meal": "Formaggio",
+        "ingredient": "Four cheeses (mozzarella, parmesan, pecorino, jarlsberg)",
+        "price": "$15.50",
+        "class": "pizza"
+    },
+    {
+        "meal": "Meat Town",
+        "ingredient": "Fresh tomatoes, mozzarella, hot pepporoni, hot sausage, beef, chicken",
+        "price": "$20.00",
+        "class": "pizza"
+    },
+    {
+        "meal": "Lasagna",
+        "ingredient": "Special sauce, mozzarella, parmesan, ground beef",
+        "price": "$13.50",
+        "class": "pasta"
+    },
+    {
+        "meal": "Ravioli",
+        "ingredient": "Ravioli filled with cheese",
+        "price": "$14.50",
+        "class": "pasta"
+    },
+    {
+        "meal": "Spaghetti Classica",
+        "ingredient": "Fresh tomatoes, onions, ground beef",
+        "price": "$11.00",
+        "class": "pasta"
+    },
+    {
+        "meal": "Chicken Soup",
+        "ingredient": "Chicken meat, noodles, carrot",
+        "price": "$5.50",
+        "class": "starters"
+    },
+    {
+        "meal": "Bruschetta",
+        "ingredient": "Bread with pesto, tomatoes, onion, garlic",
+        "price": "$8.50",
+        "class": "starters"
+    },
+    {
+        "meal": "Garlic bread",
+        "ingredient": "Grilled ciabatta, garlic butter, onions",
+        "price": "$9.50",
+        "class": "starters"
+    }
+]

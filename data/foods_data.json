@@ -1,0 +1,164 @@
+[
+    {
+        "class": "Margherita",
+        "inputs": [
+            "I would like Margherita",
+            "I would like one Margherita",
+            "I would like two Margheritas",
+            "Margherita, please",
+            "One Margherita, please",
+            "Two Margheritas, please",
+            "Margherita",
+            "One Margherita",
+            "Two Margheritas",
+            "Please deliver me a Margherita",
+            "Please deliver me two Margheritas",
+            "I want Margherita to be delivered to me",
+            "I want to order Margherita"
+        ]
+    },
+    {
+        "class": "Formaggio",
+        "inputs": [
+            "I would like Formaggio",
+            "I would like one Formaggio",
+            "I would like two Formaggios",
+            "Formaggio, please",
+            "One Formaggio, please",
+            "Two Formaggios, please",
+            "Formaggio",
+            "One Formaggio",
+            "Two Formaggios",
+            "Please deliver me a Formaggio",
+            "Please deliver me two Formaggios",
+            "I want Formaggio to be delivered to me",
+            "I want to order Formaggio"
+        ]
+    },
+    {
+        "class": "Meat Town",
+        "inputs": [
+            "I would like Meat Town",
+            "I would like one Meat Town",
+            "I would like two Meat Towns",
+            "Meat Town, please",
+            "One Meat Town, please",
+            "Two Meat Towns, please",
+            "Meat Town",
+            "One Meat Town",
+            "Two Meat Towns",
+            "Please deliver me a Meat Town",
+            "Please deliver me two Meat Towns",
+            "I want Meat Town to be delivered to me",
+            "I want to order Meat Town"
+        ]
+    },
+    {
+        "class": "Lasagna",
+        "inputs": [
+            "I would like Lasagna",
+            "I would like one Lasagna",
+            "I would like two Lasagnas",
+            "Lasagna, please",
+            "One Lasagna, please",
+            "Two Lasagnas, please",
+            "Lasagna",
+            "One Lasagna",
+            "Two Lasagnas",
+            "Please deliver me a Lasagna",
+            "Please deliver me two Lasagnas",
+            "I want Lasagna to be delivered to me",
+            "I want to order Lasagna"
+        ]
+    },
+    {
+        "class": "Ravioli",
+        "inputs": [
+            "I would like Ravioli",
+            "I would like one Ravioli",
+            "I would like two Raviolis",
+            "Ravioli, please",
+            "One Ravioli, please",
+            "Two Raviolis, please",
+            "Ravioli",
+            "One Ravioli",
+            "Two Raviolis",
+            "Please deliver me a Ravioli",
+            "Please deliver me two Raviolis",
+            "I want Ravioli to be delivered to me",
+            "I want to order Ravioli"
+        ]
+    },
+    {
+        "class": "Spaghetti Classica",
+        "inputs": [
+            "I would like Spaghetti Classica",
+            "I would like one Spaghetti",
+            "I would like two Spaghettis",
+            "Spaghetti Classica, please",
+            "One Spaghetti Classica, please",
+            "Two Spaghettis, please",
+            "Spaghetti Classica",
+            "One Spaghetti Classica",
+            "Two Spaghetti Classica",
+            "Please deliver me a Spaghetti",
+            "Please deliver me two Spaghetti Classica",
+            "I want Spaghetti to be delivered to me",
+            "I want to order Spaghetti Classica"
+        ]
+    },
+    {
+        "class": "Chicken Soup",
+        "inputs": [
+            "I would like Chicken Soup",
+            "I would like one Chicken Soup",
+            "I would like two Chicken Soups",
+            "Chicken Soup, please",
+            "One Chicken Soup, please",
+            "Two Chicken Soups, please",
+            "Chicken Soup",
+            "One Chicken Soup",
+            "Two Chicken Soups",
+            "Please deliver me a Chicken Soup",
+            "Please deliver me two Chicken Soups",
+            "I want Chicken Soup to be delivered to me",
+            "I want to order Chicken Soup"
+        ]
+    },
+    {
+        "class": "Bruschetta",
+        "inputs": [
+            "I would like Bruschetta",
+            "I would like one Bruschetta",
+            "I would like two Bruschettas",
+            "Bruschetta, please",
+            "One Bruschetta, please",
+            "Two Bruschettas, please",
+            "Bruschetta",
+            "One Bruschetta",
+            "Two Bruschettas",
+            "Please deliver me a Bruschetta",
+            "Please deliver me two Bruschettas",
+            "I want Bruschetta to be delivered to me",
+            "I want to order Bruschetta"
+        ]
+    },
+    {
+        "class": "Garlic bread",
+        "inputs": [
+            "I would like Garlic bread",
+            "I would like one Garlic bread",
+            "I would like two Garlic breads",
+            "Garlic bread, please",
+            "One Garlic bread, please",
+            "Two Garlic breads, please",
+            "Garlic bread",
+            "One Garlic bread",
+            "Two Garlic breads",
+            "Please deliver me a Garlic bread",
+            "Please deliver me two Garlic breads",
+            "I want Garlic bread to be delivered to me",
+            "I want to order Garlic bread"
+        ]
+    }
+]

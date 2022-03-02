@@ -1,0 +1,21 @@
+[
+    {
+        "class": "positive",
+        "examples": [
+            "Yes, thank you!",
+            "Yes, I do!",
+            "Yes please.",
+            "Yes of course.",
+            "Yes."
+        ]
+    },
+    {
+        "class": "negative",
+        "examples": [
+            "No, thank you!",
+            "I don't want anything else.",
+            "No, nothing else.",
+            "No."
+        ]
+    }
+]

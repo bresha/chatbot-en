@@ -1,0 +1,43 @@
+{
+    "starting_menu": {
+        "greet": "Hi, I'm restaurant bot. What would you like to do?",
+        "options": [
+            "Order food",
+            "Book a table"
+        ]
+    },
+    "order_menu_path": [
+        {
+            "order_question": "What would you like to order?"
+        },
+        {
+            "anything_else": "Wold you like to order anything else?"
+        },
+        {
+            "delivery_address": "Where do you want us to deliver?"
+        },
+        {
+            "name": "What is your name?"
+        },
+        {
+            "email": "What is your email address?"
+        },
+        {
+            "telephone": "What is your phone number?"
+        }
+    ],
+    "book_table_path": [
+        {
+            "number_of_persons": "For how many persons would you like to book a table?"
+        },
+        {
+            "date_and_time": "What is your prefered date_and_time?"
+        },
+        {
+            "name": "For which name should I make a reservation?"
+        },
+        {
+            "reservation_meals": "Would you like to order meals?"
+        }
+    ]
+}
