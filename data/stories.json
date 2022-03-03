@@ -31,7 +31,7 @@
             "number_of_persons": "For how many persons would you like to book a table?"
         },
         {
-            "date_and_time": "What is your prefered date_and_time?"
+            "date_and_time": "What is your prefered date and time?"
         },
         {
             "name": "For which name should I make a reservation?"

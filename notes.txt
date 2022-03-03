@@ -1,4 +1,2 @@
-1.  fix anything else
-    - create pipeline for anything else
-    - fix double list errors when adding food on anything else
-    - fix anything else loop
+1. make reservation table branch work
+    - add option to order meals

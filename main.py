@@ -36,7 +36,6 @@ def parse_order_seg(order_seg):
     idx = np.argmax(clf_prob)
     if clf_prob[0][idx] > 0.13:
         item = foods_labels[str(idx)]
-
         order_doc = nlp(order_seg)
         numbers = order_doc._.numerize()
         if len(numbers.keys()) > 1:
@@ -121,9 +120,9 @@ def parse_number_of_persons():
     while True:
         number_of_persons = input(">>")
         number_of_persons_doc = nlp(number_of_persons)
-        values = [token for token in span.subtree if token.like_num]
-        if len(values) == 1:
-            return values[0]
+        numbers = number_of_persons_doc._.numerize()
+        if len(numbers.keys()) == 1:
+            return int(list(numbers.values())[0]) 
         else:
             print("Invalid input. Please specify number of persons!")
 
@@ -143,7 +142,7 @@ def parse_reservation_meals():
     while True:
         answer = input(">>")
         answer_doc = nlp(answer)
-        negation_tokens = [tok for tok in answer_doc if tok.dep_ == 'neg']
+        # Fix this
         if len(negation_tokens) > 1:
             return []
         else:
