@@ -4,20 +4,16 @@ from spacy.matcher import Matcher
 import re
 from joblib import load
 from sklearn.feature_extraction.text import TfidfVectorizer
-
+import numerizer
+import numpy as np
 
 def load_json(filename):
     with open(filename) as f:
         content = json.load(f)
         return content
 
-def create_vectorizer_data():
-    examples = []
-    for item in aff_neg_data:
-        for value in item["examples"]:
-            examples.append(value)
-    return examples
 
+foods_labels = load_json("data/foods_labels.json")
 stories = load_json("data/stories.json")
 menu = load_json("data/menu.json")
 foods = [food["meal"] for food in menu]
@@ -26,31 +22,44 @@ aff_neg_data = load_json("data/aff_neg_data.json")
 
 nlp = spacy.load("en_core_web_md")
 matcher = Matcher(nlp.vocab)
-    
-vectorizer = TfidfVectorizer()
-vectorizer.fit(create_vectorizer_data())
 
-aff_neg_clf = load("models/aff_neg_clf.joblib")
+aff_neg_classifier = load("models/aff_neg_pipe.plk")
 
-def create_food_patterns():
-    patterns = []
-    for food in foods:
-        patterns.append([{"IS_DIGIT": True}, {"LEMMA": food.lower()}])
-    return patterns
+foods_classifier = load("models/foods_grid_mnb.pkl")
+
+
+def parse_order_seg(order_seg):
+    number_of_items = 0
+    item = ""
+
+    clf_prob = foods_classifier.predict_proba([order_seg])
+    idx = np.argmax(clf_prob)
+    if clf_prob[0][idx] > 0.13:
+        item = foods_labels[str(idx)]
+
+        order_doc = nlp(order_seg)
+        numbers = order_doc._.numerize()
+        if len(numbers.keys()) > 1:
+            raise Exception("To many numbers found")
+        elif len(numbers.keys()) == 0:
+            number_of_items = 1
+        else:
+            number_of_items = int(list(numbers.values())[0])
+
+    return {item: number_of_items}
 
 def parse_order_input(order=None):
     while True:
         if order is None:
             order = input(">>")
-        order_doc = nlp(order.lower())
-        patterns = create_food_patterns()
-        matcher.add("FOODS_PATTERNS", patterns)
-        matches = matcher(order_doc)
-        if len(matches) > 0:
-            orders = []
-            for match_id, start, end in matches:
-                order = order_doc[start:end]
-                orders.append(order)
+        order_split_coma = order.lower().split(",")
+        order_split_and = []
+        for order_split in order_split_coma:
+            order_split_and += order_split.split(" and ")
+        orders = []
+        for order_seg in order_split_and:
+            orders.append(parse_order_seg(order_seg))
+        if len(orders) > 0:
             return orders
         else:
             print("Invalid input. Please enter a valid order")
@@ -59,8 +68,7 @@ def parse_order_input(order=None):
 def parse_anything_else():
     while True:
         answer = input(">>")
-        vector = vectorizer.transform([answer])
-        result = aff_neg_clf.predict(vector.toarray())
+        result = aff_neg_clf.predict([answer])
         
         if result[0] == 0:
             return []
@@ -147,7 +155,7 @@ def order_food_menu(stories):
         elif item_keys[0] == "anything_else":
             orders = parse_anything_else()
             if len(orders) > 0:
-                order["foods"].append(orders)
+                order["foods"] += orders
         elif item_keys[0] == "delivery_address":
             order["address"] = parse_delivery_address()
         elif item_keys[0] == "name":
