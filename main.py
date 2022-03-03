@@ -46,7 +46,9 @@ def parse_order_seg(order_seg):
         else:
             number_of_items = int(list(numbers.values())[0])
 
-    return {item: number_of_items}
+        return {item: number_of_items}
+
+    return {}
 
 def parse_order_input(order=None):
     while True:
@@ -58,7 +60,9 @@ def parse_order_input(order=None):
             order_split_and += order_split.split(" and ")
         orders = []
         for order_seg in order_split_and:
-            orders.append(parse_order_seg(order_seg))
+            order_from_seg = parse_order_seg(order_seg)
+            if bool(order_from_seg):
+                orders.append(order_from_seg)
         if len(orders) > 0:
             return orders
         else:
@@ -66,14 +70,16 @@ def parse_order_input(order=None):
             order = None
 
 def parse_anything_else():
+    additional_orders = []
     while True:
         answer = input(">>")
-        result = aff_neg_clf.predict([answer])
+        result = aff_neg_classifier.predict([answer])
         
         if result[0] == 0:
-            return []
+            return additional_orders
         else:
-            return parse_order_input(answer)
+            additional_orders.append(parse_order_input(answer))
+            print("Anything else?")
 
 def parse_delivery_address():
     return input(">>")
