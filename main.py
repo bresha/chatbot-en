@@ -138,12 +138,11 @@ def parse_date_and_time():
 
 
 def parse_reservation_meals():
-    # fix this
     while True:
         answer = input(">>")
-        answer_doc = nlp(answer)
-        # Fix this
-        if len(negation_tokens) > 1:
+        result = aff_neg_classifier.predict([answer])
+        
+        if result[0] == 0:
             return []
         else:
             return parse_order_input(answer)
@@ -183,8 +182,11 @@ def book_table_menu(stories):
             reservation["date_and_time"] = parse_date_and_time()
         elif item_keys[0] == "name":
             reservation["name"] = parse_name()
-        elif item_keys[0] == "order_meals":
+        elif item_keys[0] == "reservation_meals":
             reservation["reservation_meals"] = parse_reservation_meals()
+            if len(reservation["reservation_meals"]) > 0:
+                print("Would you like to order anything else?")
+                reservation["reservation_meals"] += parse_anything_else()
     return reservation
 
 def main_menu(stories):
